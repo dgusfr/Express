@@ -1,19 +1,31 @@
 const express = require("express");
 const app = express();
 
+//Express para usar o EJS como o mecanismo de visualização padrão e para usar arquivos estáticos (scripts, imagens,...)
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 //Express irá renderizar o arquivo EJS
 app.get("/:nome/:lang", function (req, res) {
   var nome = req.params.nome;
   var lang = req.params.lang;
   var exibirMsg = false;
+
+  var produtos = [
+    { nome: "Banana", preco: 3.14 },
+    { nome: "Maça", preco: 5 },
+    { nome: "Leite", preco: 6.64 },
+    { nome: "Pizza", preco: 12.0 },
+    { nome: "Macarrão", preco: 4.5 },
+    { nome: "Lasanha", preco: 14.2 },
+  ];
   res.render("index.ejs", {
     nome: nome,
     lang: lang,
     empresa: "Empresa",
     curso: "JavaScript com Node",
     msg: exibirMsg,
+    produtos: produtos,
   });
 });
 

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perguntas e Respostas</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -26,6 +27,20 @@
     <%} else {%>
       <h3>Nenhum erro!</h3>
       <%}%>
+
+
+        <% produtos.forEach((produto)=> { %>
+          <hr>
+          <h3>
+            <%= produto.nome %>
+          </h3>
+          <h4>
+            <%= produto.preco %>
+          </h4>
+          <% }) %>
+            </hr>
+
+            <img src="/img/programador.jpg" alt="programador">
 
 </body>
 
