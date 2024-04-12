@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas e Respostas</title>
+</head>
+
+<body>
+  <h1>Lista de Perguntas e respostas</h1>
+  <h2>Digite aqui a sua pergunta</h2>
+  <h2>Aqui esta a sua respostas</h2>
+
+  <p>Nome:<%= nome %>
+  </p>
+  <p>Linguagem:<%= lang %>
+  </p>
+  <p>Empresa:<%= empresa %>
+  </p>
+  <p>Curso:<%= curso %>
+  </p>
+
+  <% if(msg){ %>
+    <h3>Isso é uma menssagem de erro!</h3>
+    <%} else {%>
+      <h3>Nenhum erro!</h3>
+      <%}%>
+
+</body>
+
+</html>

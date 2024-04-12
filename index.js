@@ -1,8 +1,20 @@
 const express = require("express");
 const app = express();
 
-app.get("/", function (req, res) {
-  res.send("<h1>Bem vindo ao meu site!</h1>");
+app.set("view engine", "ejs");
+
+//Express irá renderizar o arquivo EJS
+app.get("/:nome/:lang", function (req, res) {
+  var nome = req.params.nome;
+  var lang = req.params.lang;
+  var exibirMsg = false;
+  res.render("index.ejs", {
+    nome: nome,
+    lang: lang,
+    empresa: "Empresa",
+    curso: "JavaScript com Node",
+    msg: exibirMsg,
+  });
 });
 
 app.get("/blog/:artigo?", function (req, res) {
