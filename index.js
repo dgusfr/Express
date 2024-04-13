@@ -10,6 +10,10 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/perguntar", (req, res) => {
+  res.render("perguntar.ejs");
+});
+
 app.listen(8000, (erro) => {
   if (erro) {
     console.log("Ocorreu um erro.");
